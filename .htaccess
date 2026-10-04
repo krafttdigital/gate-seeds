@@ -1,0 +1,6 @@
+RewriteEngine On
+
+# Permanently redirect the .in domains to the canonical .com domain.
+# Apache automatically preserves the original query string.
+RewriteCond %{HTTP_HOST} ^(www\.)?gateseeds\.in$ [NC]
+RewriteRule ^ https://www.gateseeds.com%{REQUEST_URI} [R=301,L,NE]
